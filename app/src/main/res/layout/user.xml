@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="user" type="fr.dream.antoninb.layoutsdynamiques.User"/>
+        <import type="android.graphics.Color"></import>
+    </data>
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{user.age >= 40 ? Color.GREEN : Color.YELLOW}"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/nom"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="@{user.nom}" />
+
+        <TextView
+            android:id="@+id/prenom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="@{user.prenom}" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="@{String.valueOf(user.age)}" />
+    </LinearLayout>
+</layout>
+
